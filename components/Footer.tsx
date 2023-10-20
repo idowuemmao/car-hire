@@ -33,7 +33,7 @@ const Footer = () => {
             key={link.title}
             className="flex flex-col gap-6 text-base min-w-[170px]"
           >
-            <h3 className="font-bold "></h3>
+            <h3 className="font-bold ">{link.title}</h3>
             {link.links.map((item) => (
               <Link key={item.title} href={item.url} className="text-gray-500">
                 {item.title}
