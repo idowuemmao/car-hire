@@ -17,7 +17,7 @@ export const manufacturers = [
   "GMC",
   "Honda",
   "Hyundai",
-  "Infiniti",
+  "Infinity",
   "Jaguar",
   "Jeep",
   "Kia",
@@ -77,7 +77,7 @@ export const footerLinks = [
       { title: "How it works", url: "/" },
       { title: "Featured", url: "/" },
       { title: "Partnership", url: "/" },
-      { title: "Bussiness Relation", url: "/" },
+      { title: "Business Relation", url: "/" },
     ],
   },
   {
