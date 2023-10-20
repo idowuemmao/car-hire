@@ -3,6 +3,7 @@ import { CarProps } from "@/types";
 import { calculateCarRent } from "@/utils";
 import Image from "next/image";
 import React from "react";
+import { CustomButton } from ".";
 
 interface carCardProps {
   car: CarProps;
@@ -33,8 +34,35 @@ const CarCard = ({ car }: carCardProps) => {
           className="object-contain"
         />
       </div>
-      <div className="relative flex w-full mt-3">
-        <div className="flex group-hover:invisible w-full justify-between text-gray-500"></div>
+      <div className="relative flex w-full mt-2">
+        <div className="flex group-hover:hidden w-full justify-between text-gray-500 ">
+          <div className="flex flex-col justify-center items-center gap-2">
+            <Image
+              src="/steering-wheel.svg"
+              width={20}
+              height={20}
+              alt="steering wheel"
+            />
+            <p className="text-base">
+              {transmission === "a" ? "Automatic" : "Manual"}
+            </p>
+          </div>
+          <div className="flex flex-col justify-center items-center gap-2">
+            <Image src="/tire.svg" width={20} height={20} alt="tire" />
+            <p className="text-base">{drive.toUpperCase()}</p>
+          </div>
+          <div className="flex flex-col justify-center items-center gap-2">
+            <Image src="/gas.svg" width={20} height={20} alt="gas" />
+            <p className="text-base">{city_mpg} MPG</p>
+          </div>
+        </div>
+        <div className="hidden group-hover:flex absolute bottom-0 w-full z-10">
+          <CustomButton
+            title="View More"
+            btnType="button"
+            containerStyles="w-full py-4 rounded-full bg-primary-blue"
+          />
+        </div>
       </div>
     </div>
   );
