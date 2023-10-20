@@ -26,7 +26,7 @@ const SearchManufacturer = ({
         );
   return (
     <div className="flex-1 max-sm:w-full flex justify-start items-center">
-      <Combobox>
+          <Combobox value={manufacturer} onChange={setManufacturer}>
         <div className="relative w-full">
           <Combobox.Button className="absolute top-4">
             <Image
@@ -52,28 +52,36 @@ const SearchManufacturer = ({
           >
             <Combobox.Options>
               {/* within the combobox.options we can first show an empty option */}
-              {filterManufacturer.length === 0 && query !== "" ? (
+              {filterManufacturer.map((item) => (
                 <Combobox.Option
-                  value={query}
-                  className="cursor-default select-none py-2 pl-10 pr-4"
+                  value={item}
+                  key={item}
+                  className={({ active }) =>
+                    `relative cursor-default select-none py-2 pl-10 pr-4 ${
+                      active ? "bg-primary-blue text-white" : `text-gray-900`
+                    }`
+                  }
                 >
-                  Create "{query}"
+                  {({ selected, active }) => (
+                    <>
+                      <span
+                        className={`block truncate ${
+                          selected ? "font-medium" : "font-normal"
+                        }`}
+                      >
+                        {item}
+                      </span>
+                      {selected ? (
+                        <span
+                          className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
+                            active ? "text-white" : "text-teal-600"
+                          }`}
+                        ></span>
+                      ) : null}
+                    </>
+                  )}
                 </Combobox.Option>
-              ) : (
-                filterManufacturer.map((item) => (
-                  <Combobox.Option
-                    value={item}
-                    key={item}
-                    className={({ active }) =>
-                      `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                        active ? "bg-primary-blue text-white" : `text-gray-900`
-                      }`
-                    }
-                  >
-                    {item}
-                  </Combobox.Option>
-                ))
-              )}
+              ))}
             </Combobox.Options>
           </Transition>
         </div>
