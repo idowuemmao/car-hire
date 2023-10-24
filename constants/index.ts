@@ -43,28 +43,31 @@ export const manufacturers = [
 ];
 
 export const yearsOfProduction = [
-  { title: "Year", value: "" },
-  { title: "2015", value: "2015" },
-  { title: "2016", value: "2016" },
-  { title: "2017", value: "2017" },
-  { title: "2018", value: "2018" },
-  { title: "2019", value: "2019" },
-  { title: "2020", value: "2020" },
-  { title: "2021", value: "2021" },
-  { title: "2022", value: "2022" },
-  { title: "2023", value: "2023" },
+  { id: 1, title: "Year", value: "" },
+  { id: 2, title: "2015", value: "2015" },
+  { id: 3, title: "2016", value: "2016" },
+  { id: 4, title: "2017", value: "2017" },
+  { id: 5, title: "2018", value: "2018" },
+  { id: 6, title: "2019", value: "2019" },
+  { id: 7, title: "2020", value: "2020" },
+  { id: 8, title: "2021", value: "2021" },
+  { id: 9, title: "2022", value: "2022" },
+  { id: 10, title: "2023", value: "2023" },
 ];
 
 export const fuels = [
   {
+    id: 1,
     title: "Fuel",
     value: "",
   },
   {
+    id: 2,
     title: "Gas",
     value: "Gas",
   },
   {
+    id: 3,
     title: "Electricity",
     value: "Electricity",
   },
@@ -72,30 +75,33 @@ export const fuels = [
 
 export const footerLinks = [
   {
+    id: "A",
     title: "About",
     links: [
-      { title: "How it works", url: "/" },
-      { title: "Featured", url: "/" },
-      { title: "Partnership", url: "/" },
-      { title: "Business Relation", url: "/" },
+      { id: 1, title: "How it works", url: "/" },
+      { id: 2, title: "Featured", url: "/" },
+      { id: 3, title: "Partnership", url: "/" },
+      { id: 4, title: "Business Relation", url: "/" },
     ],
   },
   {
+    id: "B",
     title: "Company",
     links: [
-      { title: "Events", url: "/" },
-      { title: "Blog", url: "/" },
-      { title: "Podcast", url: "/" },
-      { title: "Invite a friend", url: "/" },
+      { id: 1, title: "Events", url: "/" },
+      { id: 2, title: "Blog", url: "/" },
+      { id: 3, title: "Podcast", url: "/" },
+      { id: 4, title: "Invite a friend", url: "/" },
     ],
   },
   {
+    id: "C",
     title: "Socials",
     links: [
-      { title: "Discord", url: "/" },
-      { title: "Instagram", url: "/" },
-      { title: "Twitter", url: "/" },
-      { title: "Facebook", url: "/" },
+      { id: 1, title: "Discord", url: "/" },
+      { id: 2, title: "Instagram", url: "/" },
+      { id: 3, title: "Twitter", url: "/" },
+      { id: 4, title: "Facebook", url: "/" },
     ],
   },
 ];
