@@ -1,14 +1,14 @@
 "use client";
+import React, { useState } from "react";
 import { CarProps } from "@/types";
 import { calculateCarRent } from "@/utils";
 import Image from "next/image";
-import React, { useState } from "react";
-import { CustomButton } from ".";
+import { CarDetails, CustomButton } from ".";
 
-interface carCardProps {
+interface CarCardProps {
   car: CarProps;
 }
-const CarCard = ({ car }: carCardProps) => {
+const CarCard = ({ car }: CarCardProps) => {
   const { city_mpg, year, make, model, transmission, drive } = car;
 
   const [isOpen, setIsOpen] = useState(false);
@@ -35,8 +35,8 @@ const CarCard = ({ car }: carCardProps) => {
           className="object-contain"
         />
       </div>
-      <div className="relative flex w-full mt-2">
-        <div className="flex group-hover:hidden w-full justify-between text-gray-500 ">
+      <div className="relative group flex w-full mt-2">
+        <div className="flex  group-hover:invisible w-full justify-between text-gray-500 ">
           <div className="flex flex-col justify-center cursor-pointer items-center gap-2">
             <Image
               src="/steering-wheel.svg"
@@ -57,11 +57,11 @@ const CarCard = ({ car }: carCardProps) => {
             <p className="text-base">{city_mpg} MPG</p>
           </div>
         </div>
-        <div className="hidden group-hover:flex absolute bottom-0 w-full z-30">
+        <div className="hidden group-hover:flex absolute bottom-0 w-full z-10">
           <CustomButton
             title="View More"
             btnType="submit"
-            containerStyles="w-full py-4 rounded-full bg-primary-blue"
+            containerStyles="w-full py-2 rounded-full bg-primary-blue"
             textStyles="text-white text-base font-bold"
             rightIcon="/right-arrow.svg"
             handleClick={() => {
@@ -70,6 +70,11 @@ const CarCard = ({ car }: carCardProps) => {
           />
         </div>
       </div>
+      <CarDetails
+        isOpen={isOpen}
+        closeModal={() => setIsOpen(false)}
+        car={car}
+      />
     </div>
   );
 };
