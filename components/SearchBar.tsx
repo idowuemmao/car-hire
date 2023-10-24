@@ -16,8 +16,8 @@ const SearchBar = () => {
       <div className="flex-1 max-sm:w-full flex justify-start items-center relative">
         <SearchManufacturer
           manufacturer={""}
-          setManufacturer={function (manufacturer: string): void {
-            throw new Error("Function not implemented.");
+          setManufacturer={() => {
+            console.log(SearchManufacturer);
           }}
         />
       </div>

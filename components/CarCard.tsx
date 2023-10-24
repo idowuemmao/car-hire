@@ -2,7 +2,7 @@
 import { CarProps } from "@/types";
 import { calculateCarRent } from "@/utils";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { CustomButton } from ".";
 
 interface carCardProps {
@@ -11,6 +11,7 @@ interface carCardProps {
 const CarCard = ({ car }: carCardProps) => {
   const { city_mpg, year, make, model, transmission, drive } = car;
 
+  const [isOpen, setIsOpen] = useState(false);
   const carRent = calculateCarRent(city_mpg, year);
 
   return (
@@ -25,7 +26,7 @@ const CarCard = ({ car }: carCardProps) => {
         {carRent}
         <span className="self-end text-base font-medium">/day</span>
       </p>
-      <div className="relative w-full h-40 my-3 object-contain">
+      <div className="relative w-full h-40 my-2 object-contain">
         <Image
           src="/hero.png"
           alt="car"
@@ -36,7 +37,7 @@ const CarCard = ({ car }: carCardProps) => {
       </div>
       <div className="relative flex w-full mt-2">
         <div className="flex group-hover:hidden w-full justify-between text-gray-500 ">
-          <div className="flex flex-col justify-center items-center gap-2">
+          <div className="flex flex-col justify-center cursor-pointer items-center gap-2">
             <Image
               src="/steering-wheel.svg"
               width={20}
@@ -47,20 +48,25 @@ const CarCard = ({ car }: carCardProps) => {
               {transmission === "a" ? "Automatic" : "Manual"}
             </p>
           </div>
-          <div className="flex flex-col justify-center items-center gap-2">
+          <div className="flex flex-col justify-center cursor-pointer items-center gap-2">
             <Image src="/tire.svg" width={20} height={20} alt="tire" />
             <p className="text-base">{drive.toUpperCase()}</p>
           </div>
-          <div className="flex flex-col justify-center items-center gap-2">
+          <div className="flex flex-col justify-center cursor-pointer items-center gap-2">
             <Image src="/gas.svg" width={20} height={20} alt="gas" />
             <p className="text-base">{city_mpg} MPG</p>
           </div>
         </div>
-        <div className="hidden group-hover:flex absolute bottom-0 w-full z-10">
+        <div className="hidden group-hover:flex absolute bottom-0 w-full z-30">
           <CustomButton
             title="View More"
-            btnType="button"
+            btnType="submit"
             containerStyles="w-full py-4 rounded-full bg-primary-blue"
+            textStyles="text-white text-base font-bold"
+            rightIcon="/right-arrow.svg"
+            handleClick={() => {
+              setIsOpen(true);
+            }}
           />
         </div>
       </div>
