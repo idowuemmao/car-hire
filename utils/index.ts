@@ -1,4 +1,3 @@
-// const rapidApiKey = import.meta.env.CAR_RAPID_API_KEY;
 export async function fetchCars() {
   const headers = {
     "X-RapidAPI-Key": "ed2c79a112msh60a20edb7f96d91p10fcc2jsn7ea0483588ea",
@@ -31,3 +30,4 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
 
   return rentalRatePerDay.toFixed(0);
 };
+
