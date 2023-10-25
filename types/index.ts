@@ -42,3 +42,7 @@ export interface FilterProps {
 export interface HomeProps {
   searchParams: FilterProps;
 }
+export interface CustomFilterProps {
+  title: string;
+  options: OptionProps[];
+}

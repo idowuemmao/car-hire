@@ -49,16 +49,16 @@ const SearchBar = () => {
   return (
     <form
       onSubmit={handleSearch}
-      className="flex items-center justify-start max-sm:flex-col w-full relative gap-1 max-sm:gap-4 max-w-3xl"
+      className="flex items-center justify-start max-sm:flex-col w-full relative gap-2 max-sm:gap-4 max-w-3xl"
     >
-      <div className="flex-1 max-sm:w-full flex justify-start items-center relative border-2">
+      <div className="flex-1 max-sm:w-full flex justify-start items-center relative border-b-2">
         <SearchManufacturer
           manufacturer={manufacturer}
           setManufacturer={setManufacturer}
         />
         <SearchButton otherClasses="sm:hidden" />
       </div>
-      <div className="flex-1 max-sm:w-full border-2 flex justify-start items-center relative">
+      <div className="flex-1 max-sm:w-full border-b-2 flex justify-start items-center relative">
         <Image
           src="/model-icon.png"
           width={25}
