@@ -1,10 +1,17 @@
 import { SearchBar, Hero, CustomFilter } from "@/components";
 import CarCard from "@/components/CarCard";
+import { HomeProps } from "@/types";
 import { fetchCars } from "@/utils";
 
-export default async function Home() {
-  const allCars = await fetchCars();
-  console.log(allCars);
+export default async function Home({ searchParams }: HomeProps) {
+  const allCars = await fetchCars({
+    manufacturer: searchParams.manufacturer || "",
+    year: searchParams.year || 2023,
+    fuel: searchParams.fuel || "",
+    limit: searchParams.limit || 10,
+    model: searchParams.model || "",
+  });
+  // console.log(allCars);
   //if any of this is true it means our data is empty
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
 
