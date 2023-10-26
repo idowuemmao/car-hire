@@ -33,6 +33,7 @@ export interface CarProps {
 }
 
 export interface FilterProps {
+  pageNumber: number;
   manufacturer: string;
   year: number;
   fuel: string;
@@ -49,4 +50,8 @@ export interface OptionProps {
 export interface CustomFilterProps {
   title: string;
   options: OptionProps[];
+}
+export interface ShowMoreProps {
+  pageNumber: number;
+  isNext: boolean;
 }
