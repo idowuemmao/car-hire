@@ -33,7 +33,6 @@ export interface CarProps {
 }
 
 export interface FilterProps {
-  pageNumber: number;
   manufacturer: string;
   year: number;
   fuel: string;

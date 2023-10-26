@@ -15,7 +15,7 @@ const CustomFilter = ({ title, options }: CustomFilterProps) => {
     router.push(newPathName);
   };
   return (
-    <div className="w-fit ">
+    <div className="w-fit">
       <Listbox
         value={selected}
         onChange={(e) => {
