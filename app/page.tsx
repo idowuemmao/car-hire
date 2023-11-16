@@ -5,10 +5,8 @@ import ShowMore from "@/components/ShowMore";
 import { fuels, yearsOfProduction } from "@/constants";
 import { HomeProps } from "@/types";
 import { fetchCars } from "@/utils";
-import { useState } from "react";
 
 export default async function Home({ searchParams }: HomeProps) {
-  useState
   const allCars = await fetchCars({
     manufacturer: searchParams.manufacturer || "",
     year: searchParams.year || 2023,

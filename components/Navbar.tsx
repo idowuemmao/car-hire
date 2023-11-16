@@ -15,7 +15,7 @@ const Navbar = () => {
             height={20}
             className="object-contain"
           />
-          <h1 className="font-black text-2xl text-primary-blue">CarHire</h1>
+          <h1 className="font-black text-2xl text-primary-blue">CarGo</h1>
         </Link>
         <CustomButton
           title="Sign In"
